@@ -1,0 +1,313 @@
+\documentclass[10pt, letterpapaer]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{metalogo}
+\usepackage{xifthen}
+\usepackage[colorlinks=true, urlcolor=Blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+\newfontfamily\cfont{Noto Sans CJK SC}
+\usepackage{libertine}
+\usepackage{dirtytalk}
+\graphicspath{ {img/} }
+
+% Bold contents of a link
+\let\oldhref\href
+\renewcommand{\href}[3][blue]{\oldhref{#2}{\color{#1}{#3}}}
+% Link images
+\newcommand{\pdf}{\includegraphics[height=.85em]{img/pdf.png}}
+\newcommand{\phone}{\includegraphics[height=.85em]{img/phone.png}}
+\newcommand{\email}{\includegraphics[height=.85em]{img/email.png}}
+\newcommand{\github}{\includegraphics[height=.85em]{img/github.png}}
+\newcommand{\www}{\includegraphics[height=.85em]{img/www.png}}
+
+% Custom title command.
+\renewcommand{\maketitle} {
+		  \hspace{.25\textwidth}
+		  \begin{minipage}[t]{.5\textwidth}
+			\par{\centering{\Huge \bfseries{\theauthor}}\par}
+		  \end{minipage}
+		  \begin{minipage}[t]{.25\textwidth}
+			{\footnotesize\hfill{}\color{gray}
+			\hfill{}Download this document:
+
+			\hfill{}\href[gray]{https://ngolam.xyz/cv.pdf}{https://ngolam.xyz/cv.pdf \pdf}
+
+			\hfill{}(Last updated \thedate.)
+			}
+		  \end{minipage}
+		}
+
+% Making bigentry command
+\newcommand{\bigentry}[3]{
+\begin{minipage}[t]{.20\linewidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.75\linewidth}
+{\bf#2}\\{#3}
+\end{minipage}\\
+\vspace{.2cm}
+}
+
+% Making the \entry command
+\newcommand{\entry}[4]{
+\ifthenelse{\isempty{#3}}
+{\slimentry{#1}{#2}}{
+
+\begin{minipage}[t]{.15\linewidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.80\linewidth}
+{\bf#2}\\\textit{#3} \footnotesize{#4}
+\end{minipage}\\
+\vspace{.2cm}
+}}
+
+\newcommand{\slimentry}[2]{
+
+\begin{minipage}[t]{.15\linewidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.80\linewidth}
+#2
+\end{minipage}\\
+\vspace{.25cm}
+}% end \entry command definition
+
+\title{Résumé}
+\author{Lam Ngo}
+% \thanks{funded by}
+\date{\today}
+
+% Custom section spacing and formatting
+\titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
+\titleformat{\section}{\Large\bf\raggedright}{}{1em}{}[{\titlerule[2pt]}]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+\titleformat{\subsection}{\large\bfseries\centering}{}{0em}{\underline}%[\rule{3cm}{.2pt}]
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+
+% No indentation
+\setlength{\parindent}{0in}
+
+\begin{document}
+\maketitle
+\section{About me}
+\begin{itemize}
+  \item A guy who loving expressing ideas by programming. The programming languages to me, are just the mediums for expressing poorly-understood and sloppily-formulated ideas.
+
+  \item I'm interested in Unix, trying to do everything in Unix way. \say{Keep It Simple, Stupid (KISS)}.
+\end{itemize}
+
+\section{Basic info}
+\begin{minipage}[t]{.5\linewidth}
+  \begin{tabular}{rp{.75\linewidth}}
+	\baselineskip=20pt
+	\email{} : & \href{mailto:lam@ngolam.xyz}{lam@ngolam.xyz}\\
+	\www{} : &\href{https://www.ngolam.xyz}{https://ngolam.xyz}
+  \end{tabular}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+  \begin{tabular}{rl}
+	\baselineskip=20pt
+	\github{} : &\href{https://github.com/ngolamxyz}{https://github.com/ngolamxyz}\\
+	\phone{} : & (+84) 333 117 524
+  \end{tabular}
+\end{minipage}
+\section{Institutions}
+\entry{2008--2012}
+  {Bachelor of Mathematics}
+  {Hue University, Vietnam}
+  {Focusing on general mathematics}
+\entry{Present}
+  {Software Engineer}
+  {KMS Technology Vietnam}
+  {Working for a media project (belongs to \href{https://editshare.com}{https://editshare.com}) which helps for editing movies process of producers.}
+\section{Summary}
+\begin{itemize}
+  \item 7 years of experience in Software Development
+  \item 3 years of experience working with Lisp, Scheme
+  \item 7 years of experience working with HTML, CSS, JavaScript
+  \item 3 year of experience working with React, Redux, Webpack, Sass
+  \item 4 years of experience working with Node.js, Express, MongoDB
+  \item 4 years of experience working with Mobile-First, Responsive Design
+  \item 4 years of experience working with C, C++, Java, Ruby, Go
+  \item 2 year of experience working with Information Architecture
+  \item 4 years of experience in OOP, Design Pattern
+  \item 4 years of experience in Agile 
+\end{itemize}
+
+\section{Skills}
+\begin{itemize}
+  \item Languages: Lisp, Vim, C, C++, Ruby, Go, Java, JavaScript, TypeScript, HTML, CSS, Bash
+  \item Frameworks: Vue.js, EmberJS, Angular JS, React, Redux, Next.js, Express, Ruby on Rails, Scheme
+  \item Operating Systems: Linux
+  \item Databases: MySQL, MS SQL, MongoDB
+  \item Analysis \& Design Tools: Axure, Balsamiq Mockups
+  \item CI/CD: Maven, Jenkins, Kubernetes, Dockers
+  \item Editor: Vim
+  \item Methodology:  Agile, XP
+\end{itemize}
+
+\section{Employment History}
+\begin{itemize}
+  \item 09/2018 – Present: Software Engineer at KMS Technology, Vietnam
+  \item 9/2017 – 09/2018: Software Engineer at DXC, Vietnam
+  \item 06/2015  09/2017: Software Engineer at DXC, Vietnam
+  \item 09/2013 – 06/2015: Software Engineer at Desvlab, Vietnam
+\end{itemize}
+
+\section{Some Work Experiences}	
+\bigentry{2020 – Present}
+{KMS Technology, HCM City, Vietnam}
+{Software Engineer
+\begin{itemize}
+  \item Project: Editshare
+  \item Project Description: Helping client to build web user interface for their systems. Most of UIs are related to editing, storing, maintaining videos.
+  \item Domain: Media
+  \item Project Team Size: 15
+  \item Skill Set Utilize
+	\begin{itemize}
+	  \item Vue.js, EmberJS, Express, MySQL, Bash
+	  \item Maven, Node.js, 
+	  \item Scrum Agile
+	\end{itemize}
+  \item Responsibilities
+	\begin{itemize}
+	  \item Develop storybook for resusable components in Vue.js
+	  \item Building UI/UX for web applications
+	\end{itemize}
+\end{itemize}}
+
+\bigentry{09/2018 – 2022}
+{KMS Technology, HCM City, Vietnam}
+{Software Engineer
+\begin{itemize}
+  \item Project: Revegy
+  \item Project Description: Provided a financial analysis tool for sale management. This aided the sale people manage their client’s information easily and find out the best way to win the contracts.
+  \item Domain: Business Management
+  \item Project Team Size: 20
+  \item Skill Set Utilized:
+  \begin{itemize}
+	\item Spring Framework, HTML, JavaScript, EmberJS, SCSS, Bootstrap, MySQL Server
+	\item Apache Tomcat, Maven, Node.js, 
+	\item Scrum Agile
+  \end{itemize}
+  \item Responsibilities:
+  \begin{itemize}
+	\item Worked with BA to clarify requirement
+	\item Developed project’s architecture and framework for implementation
+	\item Monitored and mentored the team of developers to make the product conformed to the requirements and the defined architecture
+	\item Motivated and counseled project associates to develop skills and ensure positive performance outcomes
+  \end{itemize}
+\end{itemize}}
+
+\bigentry{09/2017 – 09/2018}
+{DXC Technology, HCM City, Vietnam}
+{Software Engineer
+\begin{itemize}
+  \item Project: AVIVA Project
+  \item Project Description: Provided a financial analysis tool for agents of insurance. This aided the agents manage their client’s financial information easily. Beside it, the system helps to pick up the most suitable insurance package based on specific financial situation. With the e-signature technology, the system reduces a large amount of physical papers that former system used.
+  \item Domain: Insurance
+  \item Skill Set Utilized:
+  \begin{itemize}
+	\item Spring Boot 1.4.1, HTML, JavaScript, Angular JS, CSS, Bootstrap, SQL Server 2000
+	\item Apache Tomcat, Maven, Jenkins, Flyway
+	\item Scrum Agile
+  \end{itemize}
+  \item Responsibilities:
+  \begin{itemize}
+	\item Worked with BA to clarify requirement
+	\item Developed project’s architecture and framework for implementation
+	\item Monitored and mentored the team of developers to make the product conformed to the requirements and the defined architecture
+	\item Trained team members and transferred knowledge about client’s product to the team members
+	\item Motivated and counseled project associates to develop skills and ensure positive performance outcomes
+  \end{itemize}
+\end{itemize}}
+
+\bigentry{11/2016 – 09/2017}
+{DXC Technology, HCM City, Vietnam}
+{Software Engineer
+\begin{itemize}
+  \item Project: MNC Project
+  \item Project Description: Provided a portal for a large scale company. The system help to manage content, documents, web pages,  emails, clients, authentication, authorization, etc. 
+  \item Industry: Insurance
+  \item Project Team Size: 30
+  \item Skill Set Utilized:
+	\begin{itemize}
+	  \item Liferay portal, Mule, HTML, JavaScript, Angular JS, CSS, Bootstrap, SQL Server 2000
+	  \item Apache Tomcat, Maven, Jenkins, Flyway
+	\end{itemize}
+  \item Scrum Agile
+  \item Responsibilities:
+	\begin{itemize}
+	  \item Implemented portlet services and APIs
+	  \item Collaborate with other members to integrate services.
+	  \item Mentored new team members
+	  \item Consulted the user interface of webpages. 
+	  \item Built and maintained the CI (Continuous Integration)
+	\end{itemize}
+\end{itemize}}
+
+\bigentry{03/2016 – 11/2016}
+{DXC Technology, HCM City, Vietnam}
+{Software Engineer
+\begin{itemize}
+  \item Project: ExceedJ Project
+  \item Project Description: Provided user interface for existing system. With lightweight and familiar UI/UX, users can input data quickly and effectively.
+  \item Industry: Insurance
+  \item Project Team Size: 10
+  \item Skill Set Utilized:
+	\begin{itemize}
+	  \item Spring framework, Primefaces, HTML, JavaScript, CSS, Bootstrap, PostgreSQL
+	  \item Apache Tomcat, Maven, Jenkins
+	  \item Scrum Agile
+	\end{itemize}
+  \item Responsibilities:
+	\begin{itemize}
+	  \item Implemented UI components
+	  \item Collaborate with other members to integrate services.
+	  \item Consulted the user interface of webpages. 
+	  \item Monitored performance of website by Dynatrace.
+	\end{itemize}
+\end{itemize}}
+
+\bigentry{09/2013 – 06/2015}
+{DevsLab, Hue City, Vietnam}
+{Junior Software Engineer
+\begin{itemize}
+  \item Project: Short-term Projects
+  \item Project Description: Built and delivered the front-end components for the clients.
+  \item Industry: Outsourcing
+  \item Project Team Size: 5
+  \item Skill Set Utilized: HTML, JavaScript, CSS, Bootstrap, Sass
+  \item Responsibilities: Built responsive web layouts
+\end{itemize}}
+
+\section{Work Experience Abroad}
+Singapore – 06/2018 to 07/2018
+
+\section{Softwares I use}
+\begin{itemize}
+  \item Operating System: Arch Linux, with \textbf{vim}-based setup
+  \item Window manager: dmw
+  \item Terminal: st
+  \item Editor: neovim
+  \item Document: \LaTeX
+  \item I'm familiar with: tmux, ssh, GIMP, sagemath
+\end{itemize}
+
+\section{Mini Projects}
+\begin{itemize}
+  \item Github's user explorer \href{https://github-console.ngolam.xyz}{https://github-console.ngolam.xyz}
+  \item Small business manager (specified for farms, not completed) \href{https://github.com/ngolamxyz/alfred}{https://github.com/ngolamxyz/alfred}
+\end{itemize}
+\end{document}
+
